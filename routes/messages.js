@@ -36,7 +36,7 @@ router.get('/:id', async function (req, res, next) {
 
 router.post('/', async function(req, res, next) {
     try {
-        const from_username = 'soybean';
+        const from_username = req.body.from_username;
         const to_username = req.body.to_username;
         const body = req.body.body;
         const newMessage = await Message.create({ from_username, to_username, body });

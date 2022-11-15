@@ -10,7 +10,7 @@ const {ensureLoggedIn, ensureCorrectUser} = require("../middleware/auth");
  *
  **/
 
-router.get('/', ensureLoggedIn, async function (req, res, next) {
+router.get('/', async function (req, res, next) {
     try {
         let users = await User.all();
         return res.json({users});
